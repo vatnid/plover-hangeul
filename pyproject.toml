@@ -1,0 +1,40 @@
+[project]
+name = "plover-hangeul"
+version = "1.0.0"
+description = "Plover plugin for Hangeul input"
+readme = "README.md"
+requires-python = ">= 3.7"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Samuel Lo", email = "me@samuello.io" },
+]
+keywords = [
+  "plover",
+  "plover_plugin",
+]
+classifiers = [
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+  "plover >= 4.0.0.dev11",
+  "hangul_jamo >= 1.0.1",
+]
+
+[project.urls]
+repository = "https://github.com/vatnid/plover-hangeul"
+homepage = "https://github.com/vatnid/plover-hangeul"
+
+[tool.setuptools]
+packages = ["hangeul"]
+
+[build-system]
+requires = [
+  "setuptools >= 61.0.0",
+  "wheel",
+]
+
+[project.entry-points."plover.system"]
+Hangeul = "hangeul.system"
