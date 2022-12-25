@@ -9,32 +9,63 @@ LONGEST_KEY = 1
 def lookup(outline):
     assert len(outline) <= LONGEST_KEY
 
-    p = re.compile("([HSTKPR]*)([-YWAOEU*]*)([JLPBHGTSDZ]*)")
-    m = p.match(outline[0])
+    stroke = outline[0]
+
+    # Fingerspelling
+    fingerspelling = {
+                     "K*":   "ㄱ",   "SK*":   "ㄲ",   "KP*":   "ㅋ",
+                     "TK*":  "ㄷ",   "STK*":  "ㄸ",   "T*":    "ㅌ",
+                     "TP*":  "ㅂ",   "STP*":  "ㅃ",   "P*":    "ㅍ",
+                     "KR*":  "ㅈ",   "SKR*":  "ㅉ",   "KH*":   "ㅊ",
+                     "TPH*": "ㄴ",   "PH*":   "ㅁ",   "R*":    "ㄹ",
+                     "S*":   "ㅅ",   "ST*":   "ㅆ",   "H*":    "ㅎ",
+                     "W*":   "ㅜ",   "TKPW*": "ㅇ",
+                     "A*":   "ㅏ",   "A*U":   "ㅑ",   "WA*":   "ㅘ",
+                     "A*E":  "ㅐ",   "A*EU":  "ㅒ",   "WA*E":  "ㅙ",
+                     "O*E":  "ㅓ",   "O*EU":  "ㅕ",   "WO*":   "ㅝ",
+                     "*E":   "ㅔ",   "AO*E":  "ㅖ",   "W*E":   "ㅞ",
+                     "O*":   "ㅗ",   "O*U":   "ㅛ",   "WO*E":  "ㅚ",
+                     "*U":   "ㅜ",   "AO*U":  "ㅠ",   "W*EU":  "ㅟ",
+                     "AO*":  "ㅡ",   "*EU":   "ㅣ",   "AO*EU": "ㅢ",
+                     "*GS":   "ㄳ",  "*JPB":  "ㄵ",   "*JLPB": "ㄵ",
+                     "*PBH":  "ㄶ",  "*LG":   "ㄺ",   "*LPH":  "ㄻ",
+                     "*LB":   "ㄼ",  "*LS":   "ㄽ",   "*LT":   "ㄾ",
+                     "*LP":   "ㄿ",  "*LH":   "ㅀ",   "*BS":   "ㅄ"
+                     }
+    if stroke in fingerspelling:
+        return "{^" + fingerspelling[stroke] + "^}"
+
+    p = re.compile("([STKPWHR]*)([-AOEU*]*)([JLPBHGTSDZ]*)")
+    m = p.match(stroke)
     if not m:
         raise KeyError
     initial = m.group(1)
     vowel = m.group(2)
     final = m.group(3)
 
+    # Put W to vowel part
+    if "W" in initial:
+        vowel = "W" + vowel
+        initial = re.sub(r"W", r"", initial)
+
     initial_jamo = { "":     "ㅇ",
                      "K":    "ㄱ",   "SK":    "ㄲ",   "KP":   "ㅋ",
                      "TK":   "ㄷ",   "STK":   "ㄸ",   "T":    "ㅌ",
-                     "PR":   "ㅂ",   "SPR":   "ㅃ",   "P":    "ㅍ",
-                     "KR":   "ㅈ",   "SKR":   "ㅉ",   "TP":   "ㅊ",
-                     "HTP":  "ㄴ",   "HT":    "ㅁ",   "R":    "ㄹ",
-                     "S":    "ㅅ",   "HS":    "ㅆ",   "H":    "ㅎ" }
-    vowel_jamo =   { "":     "",
-                     "A":    "ㅏ",   "YA":    "ㅑ",   "WA":   "ㅘ",
-                     "AE":   "ㅐ",   "YAE":   "ㅒ",   "WAE":  "ㅙ",
-                     "OE":   "ㅓ",   "YOE":   "ㅕ",   "WO":   "ㅝ",
-                     "E":    "ㅔ",   "YE":    "ㅖ",   "WE":   "ㅞ",
-                     "O":    "ㅗ",   "YO":    "ㅛ",   "OEU":  "ㅚ",
-                     "U":    "ㅜ",   "YU":    "ㅠ",   "WEU":  "ㅟ",
+                     "TP":   "ㅂ",   "STP":   "ㅃ",   "P":    "ㅍ",
+                     "KR":   "ㅈ",   "SKR":   "ㅉ",   "KH":   "ㅊ",
+                     "TPH":  "ㄴ",   "PH":    "ㅁ",   "R":    "ㄹ",
+                     "S":    "ㅅ",   "ST":    "ㅆ",   "H":    "ㅎ" }
+    vowel_jamo =   { "W":    "ㅜ",
+                     "A":    "ㅏ",   "AU":    "ㅑ",   "WA":   "ㅘ",
+                     "AE":   "ㅐ",   "AEU":   "ㅒ",   "WAE":  "ㅙ",
+                     "OE":   "ㅓ",   "OEU":   "ㅕ",   "WO":   "ㅝ",
+                     "E":    "ㅔ",   "AOE":   "ㅖ",   "WE":   "ㅞ",
+                     "O":    "ㅗ",   "OU":    "ㅛ",   "WOE":  "ㅚ",
+                     "U":    "ㅜ",   "AOU":   "ㅠ",   "WEU":  "ㅟ",
                      "AO":   "ㅡ",   "EU":    "ㅣ",   "AOEU": "ㅢ" }
     final_jamo =   { "":     "",
                      "G":    "ㄱ",   "HG":    "ㄲ",   "GS":   "ㄳ",
-                     "PB":   "ㄴ",   "JPB":   "ㄵ",   "PBH":  "ㄶ",
+                     "PB":   "ㄴ",   "JPB":   "ㄵ",   "JLPB": "ㄵ", "PBH":  "ㄶ",
                      "D":    "ㄷ",   "L":     "ㄹ",   "LG":   "ㄺ",
                      "LPH":  "ㄻ",   "LB":    "ㄼ",   "LS":   "ㄽ",
                      "LT":   "ㄾ",   "LP":    "ㄿ",   "LH":   "ㅀ",
