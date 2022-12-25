@@ -15,7 +15,7 @@ HTPY* *JPHTD
 SKRW* *LBGSZ
    AO EU
 
-ㄱ TKPR  ㄲ STKPR  ㅋ K
+ㄱ K     ㄲ SK     ㅋ KP
 ㄷ TK    ㄸ STK    ㅌ T
 ㅂ PR    ㅃ SPR    ㅍ P
 ㅈ KR    ㅉ SKR    ㅊ TP
@@ -24,11 +24,11 @@ SKRW* *LBGSZ
 
 ㅏ A     ㅑ YA     ㅘ WA
 ㅐ AE    ㅒ YAE    ㅙ WAE
-ㅓ AO    ㅕ YAO    ㅝ WO
+ㅓ OE    ㅕ YOE    ㅝ WO
 ㅔ E     ㅖ YE     ㅞ WE
-ㅗ O     ㅛ YO     ㅚ OE
+ㅗ O     ㅛ YO     ㅚ OEU
 ㅜ U     ㅠ YU     ㅟ WEU
-ㅣ EU    ㅡ YW     ㅢ YWEU
+ㅡ AO    ㅣ EU     ㅢ AOEU
 
 ㄱ -G    ㄲ -HG    ㄳ -GS
 ㄴ -PB   ㄵ -JL    ㄶ -LH
