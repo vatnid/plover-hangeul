@@ -11,23 +11,24 @@ This is not a full-fledged Korean steno system, but merely a syllable-based syst
 ## Layout
 
 ```
-HTPY* *JPHTD
-SKRW* *LBGSZ
+STPH* *JPHTD
+SKWR* *LBGSZ
    AO EU
 
 ㄱ K     ㄲ SK     ㅋ KP
 ㄷ TK    ㄸ STK    ㅌ T
-ㅂ PR    ㅃ SPR    ㅍ P
-ㅈ KR    ㅉ SKR    ㅊ TP
-ㄴ HTP   ㅁ HT     ㄹ R
-ㅅ S     ㅆ HS     ㅎ H
+ㅂ TP    ㅃ STP    ㅍ P
+ㅈ KR    ㅉ SKR    ㅊ KH
+ㄴ TPH   ㅁ PH     ㄹ R
+ㅅ S     ㅆ ST     ㅎ H
+ㅇ TKPW (fingerspelling only)
 
-ㅏ A     ㅑ YA     ㅘ WA
-ㅐ AE    ㅒ YAE    ㅙ WAE
-ㅓ OE    ㅕ YOE    ㅝ WO
-ㅔ E     ㅖ YE     ㅞ WE
-ㅗ O     ㅛ YO     ㅚ OEU
-ㅜ U     ㅠ YU     ㅟ WEU
+ㅏ A     ㅑ AU     ㅘ WA
+ㅐ AE    ㅒ AEU    ㅙ WAE
+ㅓ OE    ㅕ OEU    ㅝ WO
+ㅔ E     ㅖ AOE    ㅞ WE
+ㅗ O     ㅛ OU     ㅚ WOE
+ㅜ U     ㅠ AOU    ㅟ WEU
 ㅡ AO    ㅣ EU     ㅢ AOEU
 
 ㄱ -G    ㄲ -HG    ㄳ -GS
