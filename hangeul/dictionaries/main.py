@@ -43,6 +43,10 @@ def lookup(outline):
     vowel = m.group(2)
     final = m.group(3)
 
+    # STPH -> TPWH
+    if initial == "STPH":
+        initial = "TPWH"
+
     # Put W to vowel part
     if "W" in initial:
         vowel = "W" + vowel
