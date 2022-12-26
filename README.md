@@ -32,7 +32,7 @@ SKWR* *LBGSZ
 ㅡ AO    ㅣ EU     ㅢ AOEU
 
 ㄱ -G    ㄲ -HG    ㄳ -GS
-ㄴ -PB   ㄵ -JL    ㄶ -LH
+ㄴ -PB   ㄵ -JPB   ㄶ -PBH
 ㄷ -D    ㄹ -L     ㄺ -LG
 ㄻ -LPH  ㄼ -LB    ㄽ -LS
 ㄾ -LT   ㄿ -LP    ㅀ -LH
