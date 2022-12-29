@@ -15,7 +15,7 @@ def lookup(outline):
     fingerspelling = {
                      "K*":   "ㄱ",   "SK*":   "ㄲ",   "KP*":   "ㅋ",
                      "TK*":  "ㄷ",   "STK*":  "ㄸ",   "T*":    "ㅌ",
-                     "TP*":  "ㅂ",   "STP*":  "ㅃ",   "P*":    "ㅍ",
+                     "P*":   "ㅂ",   "SP*":   "ㅃ",   "TP*":   "ㅍ",
                      "KR*":  "ㅈ",   "SKR*":  "ㅉ",   "KH*":   "ㅊ",
                      "TPH*": "ㄴ",   "PH*":   "ㅁ",   "R*":    "ㄹ",
                      "S*":   "ㅅ",   "ST*":   "ㅆ",   "H*":    "ㅎ",
@@ -27,15 +27,15 @@ def lookup(outline):
                      "O*":   "ㅗ",   "O*U":   "ㅛ",   "WO*E":  "ㅚ",
                      "*U":   "ㅜ",   "AO*U":  "ㅠ",   "W*EU":  "ㅟ",
                      "AO*":  "ㅡ",   "*EU":   "ㅣ",   "AO*EU": "ㅢ",
-                     "*GS":   "ㄳ",  "*JPB":  "ㄵ",   "*JLPB": "ㄵ",
-                     "*PBH":  "ㄶ",  "*LG":   "ㄺ",   "*LPH":  "ㄻ",
-                     "*LB":   "ㄼ",  "*LS":   "ㄽ",   "*LT":   "ㄾ",
-                     "*LP":   "ㄿ",  "*LH":   "ㅀ",   "*BS":   "ㅄ"
+                     "*GS":   "ㄳ",  "*JPB":  "ㄵ",   "*JRPB": "ㄵ",
+                     "*PBH":  "ㄶ",  "*RG":   "ㄺ",   "*RPH":  "ㄻ",
+                     "*RB":   "ㄼ",  "*RS":   "ㄽ",   "*RT":   "ㄾ",
+                     "*RP":   "ㄿ",  "*RH":   "ㅀ",   "*BS":   "ㅄ"
                      }
     if stroke in fingerspelling:
         return "{^" + fingerspelling[stroke] + "^}"
 
-    p = re.compile("([STKPWHR]*)([-AOEU*]*)([JLPBHGTSDZ]*)")
+    p = re.compile("([STKPWHR]*)([-AOEU*]*)([JRPBHGTSDZ]*)")
     m = p.match(stroke)
     if not m:
         raise KeyError
@@ -55,7 +55,7 @@ def lookup(outline):
     initial_jamo = { "":     "ㅇ",
                      "K":    "ㄱ",   "SK":    "ㄲ",   "KP":   "ㅋ",
                      "TK":   "ㄷ",   "STK":   "ㄸ",   "T":    "ㅌ",
-                     "TP":   "ㅂ",   "STP":   "ㅃ",   "P":    "ㅍ",
+                     "P":    "ㅂ",   "SP":    "ㅃ",   "TP":   "ㅍ",
                      "KR":   "ㅈ",   "SKR":   "ㅉ",   "KH":   "ㅊ",
                      "TPH":  "ㄴ",   "PH":    "ㅁ",   "R":    "ㄹ",
                      "S":    "ㅅ",   "ST":    "ㅆ",   "H":    "ㅎ" }
@@ -68,10 +68,10 @@ def lookup(outline):
                      "AO":   "ㅡ",   "EU":    "ㅣ",   "AOEU": "ㅢ" }
     final_jamo =   { "":     "",
                      "G":    "ㄱ",   "HG":    "ㄲ",   "GS":   "ㄳ",
-                     "PB":   "ㄴ",   "JPB":   "ㄵ",   "JLPB": "ㄵ", "PBH":  "ㄶ",
-                     "D":    "ㄷ",   "L":     "ㄹ",   "LG":   "ㄺ",
-                     "LPH":  "ㄻ",   "LB":    "ㄼ",   "LS":   "ㄽ",
-                     "LT":   "ㄾ",   "LP":    "ㄿ",   "LH":   "ㅀ",
+                     "PB":   "ㄴ",   "JPB":   "ㄵ",   "JRPB": "ㄵ", "PBH":  "ㄶ",
+                     "D":    "ㄷ",   "R":     "ㄹ",   "RG":   "ㄺ",
+                     "RPH":  "ㄻ",   "RB":    "ㄼ",   "RS":   "ㄽ",
+                     "RT":   "ㄾ",   "RP":    "ㄿ",   "RH":   "ㅀ",
                      "PH":   "ㅁ",   "B":     "ㅂ",   "BS":   "ㅄ",
                      "S":    "ㅅ",   "Z":     "ㅆ",   "PBG":  "ㅇ",
                      "J":    "ㅈ",   "JP":    "ㅊ",   "BG":   "ㅋ",

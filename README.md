@@ -12,12 +12,12 @@ This is not a full-fledged Korean steno system, but merely a syllable-based syst
 
 ```
 STPH* *JPHTD
-SKWR* *LBGSZ
+SKWR* *RBGSZ
    AO EU
 
 ㄱ K     ㄲ SK     ㅋ KP
 ㄷ TK    ㄸ STK    ㅌ T
-ㅂ TP    ㅃ STP    ㅍ P
+ㅂ P     ㅃ SP     ㅍ TP
 ㅈ KR    ㅉ SKR    ㅊ KH
 ㄴ TPH   ㅁ PH     ㄹ R
 ㅅ S     ㅆ ST     ㅎ H
@@ -33,9 +33,9 @@ SKWR* *LBGSZ
 
 ㄱ -G    ㄲ -HG    ㄳ -GS
 ㄴ -PB   ㄵ -JPB   ㄶ -PBH
-ㄷ -D    ㄹ -L     ㄺ -LG
-ㄻ -LPH  ㄼ -LB    ㄽ -LS
-ㄾ -LT   ㄿ -LP    ㅀ -LH
+ㄷ -D    ㄹ -R     ㄺ -RG
+ㄻ -RPH  ㄼ -RB    ㄽ -RS
+ㄾ -RT   ㄿ -RP    ㅀ -RH
 ㅁ -PH   ㅂ -B     ㅄ -BS
 ㅅ -S    ㅆ -Z     ㅇ -PBG
 ㅈ -J    ㅊ -JP    ㅋ -BG
